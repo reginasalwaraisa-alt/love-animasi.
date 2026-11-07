@@ -1,52 +1,80 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About You 💕</title>
-  <style>
-    body {
-      background: #ffe6f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      flex-direction: column:
-      font-family: Arial;
-      overflow: hidden;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Starry Night ✨</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-h1 {
-  color: #e75480;
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg, #080b2b, #17265c, #354b82
+  );
+  font-family: Arial;
+  color: white;
 }
-.love {
-  font-size: 100px;
-  animation: bloom 2s infinite alternate;
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite alternate;
 }
-@keyframes bloom {
+
+@keyframes twinkle {
   from {
-    transform: scale(0.5) rotate(-15deg);
+    opacity: 0.2;
+    transform: scale(0.5);
   }
   to {
-    transform: scale(1.2) rotate(15deg);
+    opacity: 1;
+    transform: scale(1.5);
   }
 }
-p {
-  color: #c44569;
-  font-size: 18px;
+
+h1 {
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  text-shadow: 0 0 15px #fff;
 }
 </style>
 </head>
+
 <body>
-  <h1>About You 💕</h1>
-  <div class="love">💕</div>
+
+<h1>Welcome to my universe ✨</h1>
+
+<script>
+for (let i = 0; i < 100; i++) {
+  let star = document.createElement("div");
+
+  star.className = "star";
+
+  let size = Math.random() * 4 + 1;
+
+  star.style.width = size + "px";
+  star.style.height = size + "px";
+
+  star.style.left = Math.random() * 100 + "%";
+  star.style.top = Math.random() * 100 + "%";
+
+  star.style.animationDelay = Math.random() * 3 + "s";
+
+  document.body.appendChild(star);
+}
+</script>
+
 </body>
 </html>
 
-
-
-
-
-
-
-
-    
