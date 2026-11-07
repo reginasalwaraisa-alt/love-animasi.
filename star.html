@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Starry Night ✨</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg, #080b2b, #17265c, #354b82
+  );
+  font-family: Arial;
+  color: white;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.2;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+h1 {
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  text-shadow: 0 0 15px #fff;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Welcome to my universe ✨</h1>
+
+<script>
+for (let i = 0; i < 100; i++) {
+  let star = document.createElement("div");
+
+  star.className = "star";
+
+  let size = Math.random() * 4 + 1;
+
+  star.style.width = size + "px";
+  star.style.height = size + "px";
+
+  star.style.left = Math.random() * 100 + "%";
+  star.style.top = Math.random() * 100 + "%";
+
+  star.style.animationDelay = Math.random() * 3 + "s";
+
+  document.body.appendChild(star);
+}
+</script>
+
+</body>
+</html>
